@@ -5,11 +5,11 @@ services:
     ports:
     - "8080:80"
     volumes:
-    - ${DATADIR}:/grav
+    - ${GRAVDIR}:/grav
     - ./site.conf:/etc/nginx/conf.d/default.conf
 
   php:
-    image: phpgd
+    image: 1101010/nginx-php-4grav
     volumes:
-    - ${DATADIR}:/grav
+    - ${GRAVDIR}:/grav
     - ./log.conf:/usr/local/etc/php-fpm.d/zz-log.conf
